@@ -76,7 +76,7 @@ function SearchProvider({ children }) {
         descriptionProduct,
         setDescriptionProduct,
         order,
-        setOrder,,
+        setOrder,
         selectedCategory,
         setSelectedCategory, 
         products
