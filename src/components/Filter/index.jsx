@@ -1,18 +1,20 @@
+import { useContext } from 'react';
 import { TypeFilter } from './TypeFilter'
 import { RatingFilter } from './RatingFilter'
 import './Filter.css'
+import { SearchContext } from '../../contexts/SearchContext';
+
 
 function Filter () {
+    const {products} = useContext(SearchContext);
+
+    const categories = [...new Set(products.map(product =>product.category))];
+
     return (
         <div className='FilterContainer'>
             <TypeFilter
                 name='Category'
-                options={[
-                    {id: "men's clothing", label: "Men's Clothing"},
-                    {id: "women's clothing", label: "Women's Clothing"},
-                    {id: "jewelery", label: "Jewelery"},
-                    {id: "electronics", label: "Electronics"}
-                ]}
+                options={categories.map(category => ({ id: category, label: category.charAt(0).toUpperCase() + category.slice(1) }))}
             />
             <RatingFilter />
         </div>
