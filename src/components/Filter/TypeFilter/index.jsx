@@ -9,8 +9,11 @@ function TypeFilter ({name, options}) {
      const [ checkedId, setCheckedId ] = useState(null);
 
      const handleCheckboxChange = (event) => {
-       setCheckedId(event.target.id);
-       setSelectedCategory(event.target.id);
+      const selectedId = event.target.id;
+      const newCheckedId = checkedId === selectedId ? null : selectedId;
+  
+      setCheckedId(newCheckedId);
+      setSelectedCategory(newCheckedId);
      };
    
    
