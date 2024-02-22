@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Detail } from './Detail'
 import { SearchContext } from '../../../contexts/SearchContext';
 import './Card.css'
@@ -35,5 +36,15 @@ function Card ({ image, title, price, description, rating }) {
         </div>
     )
 }
+
+Card.propTypes = {
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    rating: PropTypes.shape({
+        rate: PropTypes.number.isRequired,
+    }).isRequired,
+};
 
 export { Card }

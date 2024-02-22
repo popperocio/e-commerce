@@ -63,7 +63,7 @@ function SearchProvider({ children }) {
       return roundedRating === selectedRating;
     }
     return true;
-  });;
+  });
 
 
   return (

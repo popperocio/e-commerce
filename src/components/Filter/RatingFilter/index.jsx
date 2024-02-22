@@ -27,7 +27,7 @@ function RatingFilter (ratings) {
             <div className={`RatingStarsContainer ${selectedKey=== number ? 'clicked' : ''}`} key={`rating-${number}`} onClick={() => handleRating(number)}>
                 <Rating key={number} stars={number}/>
             </div>
-        )};     
+        )}   
    }
    
     return (

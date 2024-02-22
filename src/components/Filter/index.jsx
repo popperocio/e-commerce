@@ -6,7 +6,7 @@ import { SearchContext } from '../../contexts/SearchContext';
 
 
 function Filter () {
-    const {products, setSelectedRating} = useContext(SearchContext);
+    const {products} = useContext(SearchContext);
 
     const categories = [...new Set(products.map(product =>product.category))];   
     

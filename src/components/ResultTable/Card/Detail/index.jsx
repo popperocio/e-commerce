@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { AddToCartButton } from "../../../Button/AddToCartButton"
 import { Rating } from "../../../Filter/RatingFilter/Rating"
 import './Detail.css'
@@ -15,5 +16,11 @@ function Detail ({title, price, rating }) {
             
     )
 }
+
+Detail.propTypes = {
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+};
 
 export { Detail }
