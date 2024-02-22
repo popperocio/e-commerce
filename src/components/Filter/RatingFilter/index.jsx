@@ -1,15 +1,18 @@
 import { Rating } from './Rating'
 import './RatingFilter.css'
 
-function RatingFilter () {
+function RatingFilter (ratings) {
+   const ratingElements = [];
+
+   for (const number of ratings.ratings) {
+       ratingElements.push(<Rating key={number} stars={number} />);
+   }
+   
     return (
         <div className='RatingFilterContainer'>
             <h2>Rates:</h2>
             <div className='RatingsContainer'>
-                <Rating stars={4} />
-                <Rating stars={3} />
-                <Rating stars={2} />
-                <Rating stars={1} />
+                {ratingElements}            
             </div>
         </div>
     )
