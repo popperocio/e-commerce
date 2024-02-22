@@ -14,7 +14,8 @@ function SearchProvider({ children }) {
   const [descriptionProduct, setDescriptionProduct] = useState("");
   const [order, setOrder] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-
+  const [selectedRating, setSelectedRating] = useState(null);
+  
 
   const getData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -56,7 +57,14 @@ function SearchProvider({ children }) {
       return product.category==(selectedCategory)
     }
     return true;
+  }).filter((product) => {
+    if (selectedRating) {
+      const roundedRating=Math.round(product.rating.rate)
+      return roundedRating === selectedRating;
+    }
+    return true;
   });
+
 
   return (
     <SearchContext.Provider
@@ -79,7 +87,9 @@ function SearchProvider({ children }) {
         setOrder,
         selectedCategory,
         setSelectedCategory, 
-        products
+        products,
+        selectedRating,
+        setSelectedRating,
       }}
     >
       {children}
