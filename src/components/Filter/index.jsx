@@ -6,12 +6,12 @@ import { SearchContext } from '../../contexts/SearchContext';
 
 
 function Filter () {
-    const {products} = useContext(SearchContext);
+    const {products, setSelectedRating} = useContext(SearchContext);
 
     const categories = [...new Set(products.map(product =>product.category))];   
     
     const roundedRatings = [...new Set(products.map(product => Math.round(product.rating.rate)))].sort((a, b) => b - a);
-  
+
     return (
         <div className='FilterContainer'>
             <TypeFilter
