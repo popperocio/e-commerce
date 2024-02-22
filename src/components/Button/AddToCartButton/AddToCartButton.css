@@ -1,9 +1,12 @@
 .AddToCartButton{
-    margin: 10px 0px 0px 0px;
+    margin-top: auto;
+    margin-bottom: auto;
     padding:10px;
     border-radius: 10px;
     border: none;
     background-color:white;
     text-transform: uppercase;
     font-weight: bold;
+    align-self: center; 
+    width: 70%;
 }
