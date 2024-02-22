@@ -4,17 +4,15 @@ import './Detail.css'
 
 function Detail ({title, price, rating }) {
     return (
-        <>
             <div className="DetailsCardContainer">
+                <h3 className="DetailsProductTitle">{title}</h3>
                 <h3>{title}</h3>
                 <Rating stars={rating} />
+
                 <h3>${price}</h3>
-                <div className="AddToCartButtonContainer">
-                    <AddToCartButton></AddToCartButton> 
-                </div>
+                <AddToCartButton className="AddToCartButton"></AddToCartButton> 
             </div>
             
-        </>
     )
 }
 
