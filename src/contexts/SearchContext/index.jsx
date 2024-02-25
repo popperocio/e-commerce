@@ -1,6 +1,6 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useReducer } from "react";
 import PropTypes from "prop-types"; 
-
+import { initialState, cartReducer } from "../../reducers/CartReducer";
 const SearchContext = createContext();
 
 function SearchProvider({ children }) {
@@ -12,11 +12,11 @@ function SearchProvider({ children }) {
   const [titleProduct, setTitleProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
   const [descriptionProduct, setDescriptionProduct] = useState("");
-
   const [order, setOrder] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedRating, setSelectedRating] = useState(null);
   const [ratingProduct, setRatingProduct] = useState(null);
+  const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
   const getData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -66,7 +66,6 @@ function SearchProvider({ children }) {
     return true;
   });
 
-
   return (
     <SearchContext.Provider
       value={{
@@ -93,7 +92,9 @@ function SearchProvider({ children }) {
         setSelectedRating,
         ratingProduct,
         setRatingProduct,
-     
+        cartProducts: cartState.cartProducts,
+        cartState,
+        dispatch,    
       }}
     >
       {children}
