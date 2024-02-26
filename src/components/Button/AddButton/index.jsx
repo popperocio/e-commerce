@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './AddButton.css'
 
 function AddButton ({onClick}) {
@@ -9,5 +10,9 @@ function AddButton ({onClick}) {
     
     )
 }
+
+AddButton.propTypes = {
+    onClick: PropTypes.func.isRequired
+};
 
 export { AddButton }

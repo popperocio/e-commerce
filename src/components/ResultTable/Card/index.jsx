@@ -47,6 +47,7 @@ Card.propTypes = {
     rating: PropTypes.shape({
         rate: PropTypes.number.isRequired,
     }).isRequired,
+    productId: PropTypes.number.isRequired
 };
 
 export { Card }
