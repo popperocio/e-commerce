@@ -67,6 +67,10 @@ function SearchProvider({ children }) {
     return true;
   });
 
+  useEffect(() => {
+    dispatch({ type: "CALCULATE_CART_TOTAL" });
+  }, [cartState.cartProducts]);
+
   return (
     <SearchContext.Provider
       value={{
@@ -97,7 +101,7 @@ function SearchProvider({ children }) {
         cartState,
         dispatch,  
         productId,
-        setProductId  
+        setProductId
       }}
     >
       {children}

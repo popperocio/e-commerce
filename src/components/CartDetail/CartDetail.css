@@ -36,9 +36,9 @@
     width:40%;
 }
 
-.IncreaseAndDecreaseButtons{
+.IncreaseDecreaseButtons{
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    width: 40%;
+    width: 25%;
 }
