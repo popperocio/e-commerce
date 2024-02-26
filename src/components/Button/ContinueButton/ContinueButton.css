@@ -1,0 +1,10 @@
+.ContinueButton{
+    margin:20px;
+    padding:10px;
+    border-radius: 10px;
+    border: none;
+    background-color:rgb(30, 190, 30);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}

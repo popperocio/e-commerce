@@ -1,6 +1,7 @@
 import './CartDetail.css'
 import { useContext } from 'react';
 import { SearchContext } from '../../contexts/SearchContext';
+import { ContinueButton } from '../Button/ContinueButton';
 
 function CartDetail () {
 
@@ -9,7 +10,8 @@ function CartDetail () {
   return (
       <div className={cartState.toggleCartDetail ? "CartDetailContainerShow" : "CartDetailContainerHide"}>
         <div className='CartSubtotalContainer'>
-            <h2> Subtotal: </h2>
+            <h2> Subtotal </h2>
+            <ContinueButton/>
         </div>
         <div>
             {cartState.cartProducts.map((product) => (
