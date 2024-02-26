@@ -25,6 +25,18 @@ const initialState = {
             cartProducts: [...state.cartProducts, action.payload],
           };
         }
+      case "UPDATE_PRODUCT_QUANTITY":
+        const { productId, quantity } = action.payload;
+        const updatedProducts = state.cartProducts.map(product => {
+          if (product.id === productId) {
+            return { ...product, quantity: quantity };
+          }
+          return product;
+        });
+        return {
+          ...state,
+          cartProducts: updatedProducts,
+        };
       default:
           return state;
     }
