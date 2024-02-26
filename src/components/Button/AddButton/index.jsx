@@ -1,10 +1,10 @@
 import './AddButton.css'
 
-function AddButton () {
+function AddButton ({onClick}) {
     return (
         <button
             className='AddButton'
-            onClick={() => {}}
+            onClick={onClick}
         >Add</button>
     
     )

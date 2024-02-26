@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useCallback } from 'react';
 import './Modal.css'
 import { Rating } from "../Filter/RatingFilter/Rating"
 import { AiOutlineCloseCircle } from 'react-icons/ai'
@@ -13,13 +13,29 @@ function Modal () {
         imageProduct,
         titleProduct,
         priceProduct,
-        descriptionProduct
+        descriptionProduct,
+        dispatch,
+        productId
     } = useContext(SearchContext);
     const [quantity, setQuantity] = useState(1); 
 
     const setCloseModal = () => {
         setIsOpen(false)
     }
+
+    const handleAddToCart = useCallback(() => {
+        dispatch({ 
+            type: 'ADD_TO_CART', 
+            payload:  {
+                id: productId,
+                image: imageProduct,
+                title: titleProduct,
+                price: priceProduct,
+                description: descriptionProduct,
+                quantity: quantity
+            }
+        });
+    }, [dispatch, productId, imageProduct, titleProduct, priceProduct, descriptionProduct, quantity]);
 
     return (
         <div className='ModalContainer'>
@@ -41,11 +57,8 @@ function Modal () {
                             <h3>{ quantity }</h3>
                             <IncreaseButton quantity={quantity} setQuantity={setQuantity}/> 
                         </div>
-                            <AddButton/>
-                    </div>
-                    
-            
-                    
+                        <AddButton onClick={handleAddToCart}/>
+                    </div>               
                 </div>
             </div>
         </div>
