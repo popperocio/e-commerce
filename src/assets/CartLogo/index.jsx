@@ -4,10 +4,10 @@ import { SearchContext } from '../../contexts/SearchContext';
 
 
 function CartLogo () {
-    const { dispatch } = useContext(SearchContext);
+    const { dispatch,  cartState } = useContext(SearchContext);
     
     return (
-        <div className='cartLogoContainer' onClick= {()=>dispatch({ type: 'OPEN_CART' })}>
+        <div className={`cartLogoContainer ${cartState.cartProducts.length >0 ? 'cartChanged' : ''}`} onClick= {()=>dispatch({ type: 'OPEN_CART' })}>
             <img src='src/assets/CartLogo/shopping-cart.png'/>
         </div>
     )
