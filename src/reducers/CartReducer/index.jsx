@@ -37,6 +37,16 @@ const initialState = {
           ...state,
           cartProducts: updatedProducts,
         };
+      case "CALCULATE_CART_TOTAL":
+          const total = state.cartProducts.reduce((total, product) => {
+            const productTotal = product.price * product.quantity;
+            return total + productTotal;
+          }, 0);
+          return {
+            ...state,
+            cartTotal: total
+          };
+    
       default:
           return state;
     }
