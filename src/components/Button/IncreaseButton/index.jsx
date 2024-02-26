@@ -1,6 +1,5 @@
+import PropTypes from 'prop-types';
 import './IncreaseButton.css'
-import { useContext } from 'react';
-import { SearchContext } from '../../../contexts/SearchContext';
 
 function IncreaseButton ( {quantity, setQuantity}) {
 
@@ -16,5 +15,10 @@ function IncreaseButton ( {quantity, setQuantity}) {
     
     )
 }
+
+IncreaseButton.propTypes = {
+    quantity: PropTypes.number.isRequired,
+    setQuantity: PropTypes.func.isRequired
+};
 
 export { IncreaseButton }

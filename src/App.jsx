@@ -4,8 +4,7 @@ import { Navbar } from './components/Navbar'
 import { ResultInfoBar } from './components/ResultInfoBar'
 import { ResultTable } from './components/ResultTable'
 import { CartDetail } from './components/CartDetail'
-import { SearchContext, SearchProvider } from './contexts/SearchContext'
-import { useContext } from 'react'
+import { SearchProvider } from './contexts/SearchContext'
 
 function App() {
 
