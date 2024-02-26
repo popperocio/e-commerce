@@ -2,10 +2,43 @@
     height: 800px;
     display: block;
     border-left: solid 1px #7E7E7E;
-    padding: 10px 20px;
-    min-width: 200px;
+    max-width: 270px;
 }
 
 .CartDetailContainerHide {
     display: none;
+}
+
+.CartSubtotalContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:40px;
+    padding-bottom: 40px;
+    border-bottom: solid 1px #7E7E7E;
+}
+
+.CartProductContainer h3{
+    font-size: x-large;
+    padding: 15px;
+    font-weight: bold;
+}
+.CartProductContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:40px;
+    padding-bottom: 40px;
+    border-bottom: solid 1px #7E7E7E;
+    
+}
+.CartProductContainer img{
+    width:40%;
+}
+
+.IncreaseAndDecreaseButtons{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 40%;
 }
