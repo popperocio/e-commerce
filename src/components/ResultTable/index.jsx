@@ -10,7 +10,6 @@ function ResultTable () {
         isLoading,
         isOpen,
       } = useContext(SearchContext);
-
     return (
         <div className='ResultContainer'>
             <h2>Results:</h2>
@@ -21,13 +20,12 @@ function ResultTable () {
                     searchedProducts.map((product, index) => 
                         <Card
                             key={index}
-                            productId = {product.id}
                             image = {product.image}
                             title = {product.title}
                             price = {product.price}
                             description = {product.description}
                             rating = { product.rating}
-                        />                   
+                        />
                     )
                 }
             </div>
