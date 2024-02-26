@@ -4,7 +4,8 @@ import { Detail } from './Detail'
 import { SearchContext } from '../../../contexts/SearchContext';
 import './Card.css'
 
-function Card ({ image, title, price, description, rating }) {
+
+function Card ({ productId, image, title, price, description, rating }) {
     const {
         setIsOpen,
         setImageProduct,
@@ -12,6 +13,7 @@ function Card ({ image, title, price, description, rating }) {
         setPriceProduct,
         setDescriptionProduct,
         setRatingProduct,
+        setProductId,
     } = useContext(SearchContext);
 
     const openModal = () => {
@@ -21,6 +23,7 @@ function Card ({ image, title, price, description, rating }) {
         setPriceProduct(price)
         setDescriptionProduct(description)
         setRatingProduct(rating.rate)
+        setProductId(productId)
     }
 
     return (
