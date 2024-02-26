@@ -66,7 +66,8 @@
 .IncreaseAndDecreaseButtons{
     display: flex;
     align-items: center; 
-    width:10%;
+    justify-content: space-between;
+    width: 25%;
 }
 
 .IncreaseAndDecreaseButtons h3 {

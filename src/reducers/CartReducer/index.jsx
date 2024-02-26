@@ -1,5 +1,5 @@
 const initialState = {
-    cartProducts: ["producto1"],
+    cartProducts: [],
     toggleCartDetail: false
   };
   
@@ -10,10 +10,10 @@ const initialState = {
             ...state,
             toggleCartDetail: !state.toggleCartDetail,
         }
-    
       default:
-        return state;
+          return state;
     }
+
   };
 
   export { initialState, cartReducer };

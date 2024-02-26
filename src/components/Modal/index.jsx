@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './Modal.css'
 import { Rating } from "../Filter/RatingFilter/Rating"
 import { AiOutlineCloseCircle } from 'react-icons/ai'
@@ -15,6 +15,7 @@ function Modal () {
         priceProduct,
         descriptionProduct
     } = useContext(SearchContext);
+    const [quantity, setQuantity] = useState(1); 
 
     const setCloseModal = () => {
         setIsOpen(false)
@@ -36,9 +37,9 @@ function Modal () {
                     <h6>{descriptionProduct}</h6>
                     <div className='ModalButtons'>
                         <div className='IncreaseAndDecreaseButtons'>
-                            <DecreaseButton/>
-                            <h3></h3>
-                            <IncreaseButton/> 
+                            <DecreaseButton quantity={quantity} setQuantity={setQuantity}/>
+                            <h3>{ quantity }</h3>
+                            <IncreaseButton quantity={quantity} setQuantity={setQuantity}/> 
                         </div>
                             <AddButton/>
                     </div>
