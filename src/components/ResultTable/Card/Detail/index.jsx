@@ -7,9 +7,7 @@ function Detail ({title, price, rating }) {
     return (
             <div className="DetailsCardContainer">
                 <h3 className="DetailsProductTitle">{title}</h3>
-                <h3>{title}</h3>
                 <Rating stars={rating} />
-
                 <h3>${price}</h3>
                 <AddToCartButton className="AddToCartButton"></AddToCartButton> 
             </div>

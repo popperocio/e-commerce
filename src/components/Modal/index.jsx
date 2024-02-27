@@ -35,6 +35,7 @@ function Modal () {
                 quantity: quantity
             }
         });
+        setIsOpen(false)
     }, [dispatch, productId, imageProduct, titleProduct, priceProduct, descriptionProduct, quantity]);
 
     return (

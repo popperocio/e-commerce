@@ -27,7 +27,6 @@ function CartDetail () {
   return (
       <div className={cartState.toggleCartDetail ? "CartDetailContainerShow" : "CartDetailContainerHide"}>
         <div className='CartProductWrapper'>
-            <RemoveButton onRemoveClick={()=>setRemoveFromCart(product.id)}></RemoveButton>
             <div className='CartSubtotalContainer'>
               <h2> Subtotal </h2>
               <h2>${cartState.cartTotal}</h2>
@@ -36,6 +35,7 @@ function CartDetail () {
           <div>
               {cartState.cartProducts.map((product) => (
                 <div key={product.id} className="CartProductContainer">
+                   <RemoveButton onClick={()=>setRemoveFromCart(product.id)}></RemoveButton>
                     <img src={product.image}/>
                     <h3>${product.price}</h3>
                     <div className='IncreaseDecreaseButtons'>
