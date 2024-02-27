@@ -36,9 +36,23 @@
     width:40%;
 }
 
-.IncreaseDecreaseButtons{
+.CartProductContainer .IncreaseDecreaseButtons{
     display: flex;
     align-items: center; 
     justify-content: space-between;
-    width: 25%;
+    width: 40%;
+}
+
+.CartProductWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%; 
+}
+    
+.CartProductWrapper .RemoveButton{
+    align-self: flex-end;
+    margin-top:30px;
+    margin-right:10px;
 }
