@@ -1,0 +1,7 @@
+.RemoveButton{
+    color:red;
+    border-radius: 50%;
+    border-width: 3px;
+    border-color:red;
+    background-color: white;
+}

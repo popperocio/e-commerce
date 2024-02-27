@@ -46,6 +46,13 @@ const initialState = {
             ...state,
             cartTotal: total
           };
+      case "REMOVE_FROM_CART":
+            const { productId: removeProductId } = action.payload;
+            const updatedCartProducts = state.cartProducts.filter(product => product.id !== removeProductId);
+            return {
+              ...state,
+              cartProducts: updatedCartProducts,
+            };
     
       default:
           return state;
